@@ -1,0 +1,20 @@
+.signIn {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    background-color: rgba(192, 60, 60, 0.452);
+    border: none;
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgba(192, 60, 60, 0.322);
+    transition: 300ms;
+}
