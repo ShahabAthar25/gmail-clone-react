@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div className="App">
-      {user ? <Gmail />  : <SignIn auth={auth} />}
+      {user ? <Gmail auth={auth} />  : <SignIn auth={auth} />}
     </div>
   );
 }

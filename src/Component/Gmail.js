@@ -1,9 +1,11 @@
 import React from 'react'
 
-function Gmail() {
+import Navbar from './Navbar'
+
+function Gmail({ auth }) {
     return (
-        <div>
-            <h1>Logged In</h1>
+        <div className="gamil">
+            <Navbar auth={auth} />
         </div>
     )
 }
