@@ -1,0 +1,12 @@
+.mail-margin {
+    margin-right: 20px;
+}
+
+.MailIcon {
+    cursor: pointer;
+    color: rgb(109, 109, 109);
+}
+
+.mail-small {
+    font-size: 15px !important;
+}
