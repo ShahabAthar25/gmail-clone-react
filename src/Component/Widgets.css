@@ -1,6 +1,11 @@
 .widgets {
     flex: 10%;
-    border-left: 1px solid rgba(128, 128, 128, 0.623);
+    /* border-left: 1px solid rgba(128, 128, 128, 0.623); */
+    border-left: 1px solid #e0e0e0;
     max-width: 55px;
     height: 40rem;
+}
+
+.line {
+    border-bottom: 1px solid #e0e0e0;
 }

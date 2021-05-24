@@ -17,7 +17,7 @@ function Widgets() {
             <WidgetOption Icon={NoteAddIcon} tooltip="Keep" />
             <WidgetOption Icon={AssignmentIndIcon} tooltip="Tasks" />
             <WidgetOption Icon={AccountCircleIcon} tooltip="Contacts" />
-            <hr />
+            <div className="line"></div>
             <div className="add-on" style={{ marginTop: "30px" }}>
                 <WidgetOption Icon={AddIcon} tooltip="Get Add-ons" />
             </div>
