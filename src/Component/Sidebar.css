@@ -1,8 +1,10 @@
 .sidebar {
     flex: 20%;
+    max-width: 250px;
 }
 
 .sidebar-btn {
+    margin-left: 10px;
     height: 56px;
     width: 56px;
 	background-color: white;
@@ -32,4 +34,8 @@
 
 .sidebar-btn:hover {
     background-color: rgba(223, 223, 223, 0.555);
+}
+
+.btn-sidebar {
+    margin-bottom: 30px;
 }
