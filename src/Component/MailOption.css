@@ -15,5 +15,5 @@
 .MailIcon:hover {
     transition: 500ms;
     background-color: #e0e0e0;
-    border-radius: 50%;
+    border-radius: 10px;
 }

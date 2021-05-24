@@ -18,3 +18,35 @@
     display: flex;
     align-items: center;
 }
+
+.tabs {
+    display: flex;
+    align-items: center;
+}
+
+.tab {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(109, 109, 109);
+    width: 200px;
+}
+
+.tab h5 {
+    padding-left: 20px;
+}
+
+.tab:hover {
+    background-color: #e0e0e0;
+}
+
+.active {
+    border-bottom: 2px solid red;
+}
+
+.seprater {
+    border-bottom: 1px solid #e0e0e0;
+}

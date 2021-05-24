@@ -28,6 +28,27 @@ function Mails() {
                     <MailOption Icon={ExpandMoreIcon} space small />
                 </div>
             </header>
+            <section className="tabs">
+                <div className="tab active">
+                    <InboxIcon className="tab-icon" style={{ color:"red" }} />
+                    <div className="text">
+                        <h5>Inbox</h5>
+                    </div>
+                </div>
+                <div className="tab">
+                    <SupervisorAccountIcon className="tab-icon" />
+                    <div className="text">
+                        <h5>Social</h5>
+                    </div>
+                </div>
+                <div className="tab">
+                    <BeenhereIcon className="tab-icon" />
+                    <div className="text">
+                        <h5>Promotion</h5>
+                    </div>
+                </div>
+            </section>
+            <div className="seprater"></div>
         </div>
     )
 }
