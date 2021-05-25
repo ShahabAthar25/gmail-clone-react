@@ -1,13 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import CloseIcon from '@material-ui/icons/Close';
 
 import './Compose.css'
 
-function Compose({ showCompose, setShowCompose }) {
+function Compose({ showCompose, setShowCompose, db }) {
+
+    const [to, setTo] = useState("")
+    const [title, setTitle] = useState("")
+    const [text, setText] = useState("")
 
     const handleOnClick = () => {
         setShowCompose(false)
+    }
+
+    const sendMessage = () => {
+        if (to !== "" || text !== "" || title !== "") {
+            console.log('HEllo')
+        } else {
+            alert('Required Fields Not Filled')
+        }
     }
 
     return (
@@ -30,13 +42,13 @@ function Compose({ showCompose, setShowCompose }) {
                     <div className="title">
                         <input type="text" placeholder="Subject " />
                     </div>
-                    <div className="to">
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <div className="text">
+                        <textarea cols="30" rows="10" value={text} onChange={(e) => setText(e.target.value)}></textarea>
                     </div>
                 </div>
             </div>
             <footer className="footer">
-                <button>Send</button>
+                <button onClick={sendMessage}>Send</button>
             </footer>
         </div>
     )

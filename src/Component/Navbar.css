@@ -3,6 +3,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    left: 0;
 }
 
 .left {
@@ -13,6 +17,7 @@
 
 .logo {
     display: flex;
+    background-color: #fff;
     align-items: center;
     margin-right: 60px;
 }

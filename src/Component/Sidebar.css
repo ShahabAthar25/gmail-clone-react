@@ -1,6 +1,7 @@
 .sidebar {
     flex: 20%;
     max-width: 250px;
+    margin-top: 1px;
 }
 
 .sidebar-btn {
