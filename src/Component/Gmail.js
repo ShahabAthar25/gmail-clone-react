@@ -8,13 +8,13 @@ import Widgets from './Widgets'
 
 import './Gmail.css'
 
-function Gmail({ auth }) {
+function Gmail({ auth, db }) {
     return (
         <div className="gamil">
             <Navbar auth={auth} />
             <div className="divide">
                 <Sidebar />
-                <Mails />
+                <Mails db={db} />
                 <Widgets />
             </div>
         </div>

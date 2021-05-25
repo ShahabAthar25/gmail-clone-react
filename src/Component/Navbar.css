@@ -19,6 +19,7 @@
 
 .menu {
     margin-right: 20px;
+    color: rgb(109, 109, 109);
 }
 
 .search {
@@ -45,6 +46,7 @@
 
 .search_icon {
     padding: 5px;
+    color: rgb(109, 109, 109);
 }
 
 .search_icon:hover {
@@ -58,6 +60,7 @@
 .more {
     padding: 5px;
     cursor: pointer;
+    color: rgb(109, 109, 109);
 }
 
 .more:hover {
@@ -76,6 +79,7 @@
     font-size: 25px !important;
     padding: 5px;
     cursor: pointer;
+    color: rgb(109, 109, 109);
 }
 
 .icon:hover {

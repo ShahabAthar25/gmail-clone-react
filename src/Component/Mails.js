@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState , useEffect} from 'react'
 
 import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -12,8 +12,19 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import './Mails.css'
 
 import MailOption from './MailOption';
+import Mail from './Mail';
 
-function Mails() {
+function Mails({ db }) {
+
+    const [mails, setMails] = useState([])
+    const [loading, setLoadind] = useState(true)
+
+    useEffect(() => {
+        db.collection("mails").onSnapshot((snapshot) =>
+            setMails(snapshot.docs.map((doc) => doc.data()))
+        );
+    }, []);
+
     return (
         <div className="mails">
             <header className="mails_icons">
@@ -49,6 +60,16 @@ function Mails() {
                 </div>
             </section>
             <div className="seprater"></div>
+            <div className="emails">
+                {mails.map((mail) => (
+                    <Mail
+                        key={mail.username}
+                        username={mail.username}
+                        text={mail.text}
+                        date={mail.date}
+                    />
+                ))}
+            </div>
         </div>
     )
 }

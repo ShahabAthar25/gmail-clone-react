@@ -23,9 +23,11 @@ function App() {
 
   const [user] = useAuthState(auth)
 
+  const db = firebase.firestore()
+
   return (
     <div className="App">
-      {user ? <Gmail auth={auth} />  : <SignIn auth={auth} />}
+      {user ? <Gmail auth={auth} db={db} />  : <SignIn auth={auth} />}
     </div>
   );
 }
