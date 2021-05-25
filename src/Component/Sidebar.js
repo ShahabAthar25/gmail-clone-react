@@ -11,11 +11,16 @@ import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 
-function Sidebar() {
+function Sidebar({ setShowCompose }) {
+
+    const handleOnClick = () => {
+        setShowCompose(true)
+    }
+
     return (
         <div className="sidebar">
             <div className="btn-sidebar">
-                <button className="sidebar-btn" href="/">
+                <button className="sidebar-btn" onClick={handleOnClick}>
                     <div className="img">
                         <img src="https://www.gstatic.com/images/icons/material/colored_icons/1x/create_32dp.png" alt="" />
                     </div>
