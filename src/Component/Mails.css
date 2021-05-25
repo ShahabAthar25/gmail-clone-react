@@ -1,5 +1,12 @@
 .mails {
     flex: 70%;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.mails::-webkit-scrollbar {
+    display: none;
 }
 
 .mails_icons {

@@ -21,7 +21,7 @@ function Mails({ db, auth }) {
     const currentUser = auth.currentUser
 
     useEffect(() => {
-        db.collection("mails").onSnapshot((snapshot) =>
+        db.collection("mails").where("sendTo", "==", currentUser.displayName).onSnapshot((snapshot) =>
             setMails(snapshot.docs.map((doc) => doc.data())),
         );
     }, []);
