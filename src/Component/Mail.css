@@ -1,0 +1,39 @@
+.mail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    cursor: pointer;
+}
+
+.mail:hover {
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+}
+
+.mail h5 {
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(41, 41, 41);
+}
+
+.mail-text {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.mail-text h5 {
+    font-size: 16;
+    margin-right: 20px;
+}
+
+.mailIcons {
+    display: flex;
+    align-items: center;
+}
+
+.mail-icon {
+    margin-right: 10px;
+    color: rgb(109, 109, 109);
+}

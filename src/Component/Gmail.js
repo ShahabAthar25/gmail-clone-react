@@ -14,7 +14,7 @@ function Gmail({ auth, db }) {
             <Navbar auth={auth} />
             <div className="divide">
                 <Sidebar />
-                <Mails db={db} />
+                <Mails db={db} auth={auth} />
                 <Widgets />
             </div>
         </div>

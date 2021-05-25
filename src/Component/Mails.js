@@ -9,19 +9,20 @@ import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import BeenhereIcon from '@material-ui/icons/Beenhere';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
-import './Mails.css'
+import './Mails.css'     
 
 import MailOption from './MailOption';
 import Mail from './Mail';
 
-function Mails({ db }) {
+function Mails({ db, auth }) {
 
     const [mails, setMails] = useState([])
-    const [loading, setLoadind] = useState(true)
+
+    const currentUser = auth.currentUser
 
     useEffect(() => {
         db.collection("mails").onSnapshot((snapshot) =>
-            setMails(snapshot.docs.map((doc) => doc.data()))
+            setMails(snapshot.docs.map((doc) => doc.data())),
         );
     }, []);
 
@@ -66,6 +67,7 @@ function Mails({ db }) {
                         key={mail.username}
                         username={mail.username}
                         text={mail.text}
+                        title={mail.title}
                         date={mail.date}
                     />
                 ))}
