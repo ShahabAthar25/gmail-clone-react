@@ -40,6 +40,9 @@ function MailDetail() {
                     <MailDetailOption Icon={ExpandMoreIcon} small />
                 </div>
             </div>
+            <div className="body">
+                <div className="title"></div>
+            </div>
         </div>
     )
 }
