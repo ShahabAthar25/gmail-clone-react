@@ -26,16 +26,18 @@ function MailDetail() {
                     <MailDetailOption Icon={AssignmentReturnedIcon} />
                     <MailDetailOption Icon={ReportIcon} />
                     <MailDetailOption Icon={DeleteIcon} />
+                    <div className="seprater"></div>
                     <MailDetailOption Icon={MailIcon} />
                     <MailDetailOption Icon={WatchLaterIcon} />
                     <MailDetailOption Icon={PlaylistAddCheckIcon} />
+                    <div className="seprater"></div>
                     <MailDetailOption Icon={ForwardIcon} />
                     <MailDetailOption Icon={LabelIcon} />
                     <MailDetailOption Icon={MoreVertIcon} />
                 </div>
                 <div className="mailDetail__right">
                     <MailDetailOption Icon={KeyboardIcon} />
-                    <MailDetailOption Icon={ExpandMoreIcon} />
+                    <MailDetailOption Icon={ExpandMoreIcon} small />
                 </div>
             </div>
         </div>

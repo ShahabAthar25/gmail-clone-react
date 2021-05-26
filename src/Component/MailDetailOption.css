@@ -1,0 +1,16 @@
+.mailDetailOption__icon {
+    color: rgb(109, 109, 109);
+    font-size: 24px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.mailDetailOption__icon:hover {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    transition: 500ms;
+}
+
+.small {
+    font-size: 20px;
+}
