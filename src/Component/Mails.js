@@ -21,10 +21,12 @@ function Mails({ db, auth }) {
     const currentUser = auth.currentUser
 
     useEffect(() => {
-        db.collection("mails").where("sendTo", "==", currentUser.displayName).onSnapshot((snapshot) =>
-            setMails(snapshot.docs.map((doc) => doc.data())),
+        db.collection("mails").where("sendTo", "==", currentUser.email).onSnapshot((snapshot) =>
+            setMails(snapshot.docs.map((doc) => doc.data()))
         );
     }, []);
+
+    console.log(mails.id)
 
     return (
         <div className="mails">
@@ -64,7 +66,7 @@ function Mails({ db, auth }) {
             <div className="emails">
                 {mails.map((mail) => (
                     <Mail
-                        key={mail.username}
+                        key={mail.id}
                         username={mail.username}
                         text={mail.text}
                         title={mail.title}

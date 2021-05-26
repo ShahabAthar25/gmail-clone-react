@@ -31,7 +31,12 @@ function Navbar({ auth }) {
                 <SettingsIcon className="icon" />
                 <AppsIcon className="icon" />
                 <div className="user">
-                    <img src={currentUser.photoURL} className="dropbtn" alt="" />
+                    <div className="dropdown">
+                        <img src={currentUser.photoURL} className="dropbtn" alt="" />
+                        <div className="dropdown-content">
+                            <button onClick={() => auth.signOut()}>SignOut</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

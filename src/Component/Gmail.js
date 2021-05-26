@@ -21,7 +21,7 @@ function Gmail({ auth, db }) {
                 <Mails db={db} auth={auth} />
                 <Widgets />
             </div>
-            <Compose showCompose={showCompose} setShowCompose={setShowCompose} db={db} />
+            <Compose showCompose={showCompose} setShowCompose={setShowCompose} db={db} auth={auth} />
         </div>
     )
 }
