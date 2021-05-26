@@ -20,13 +20,15 @@ function Mails({ db, auth }) {
 
     const currentUser = auth.currentUser
 
+    // getting data from firebase
     useEffect(() => {
-        db.collection("mails").where("sendTo", "==", currentUser.email).onSnapshot((snapshot) =>
+        db.collection("emails").where("sendTo", "==", currentUser.email).onSnapshot((snapshot) =>
+            // storring the data from firebase
             setMails(snapshot.docs.map((doc) => doc.data()))
         );
+        //Ignoring Warning with below line it is ignored with a comment
+        // eslint-disable-next-line
     }, []);
-
-    console.log(mails.id)
 
     return (
         <div className="mails">
@@ -71,6 +73,7 @@ function Mails({ db, auth }) {
                         text={mail.text}
                         title={mail.title}
                         date={mail.date}
+                        id={mail.id}
                     />
                 ))}
             </div>

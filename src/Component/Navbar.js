@@ -11,6 +11,7 @@ import "./Navbar.css"
 
 function Navbar({ auth }) {
 
+    // accessing current user profile
     const currentUser = auth.currentUser
 
     return (

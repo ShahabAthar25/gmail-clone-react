@@ -1,0 +1,19 @@
+.mailDetail {
+    flex: 70%;
+}
+
+.mailDetail__icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mailDetail__left {
+    display: flex;
+    align-items: center;
+}
+
+.mailDetail__right {
+    display: flex;
+    align-items: center;
+}

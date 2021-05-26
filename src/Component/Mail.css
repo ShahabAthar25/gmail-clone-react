@@ -41,3 +41,12 @@
     margin-right: 10px;
     color: rgb(109, 109, 109);
 }
+
+.mail a {
+    flex: 1;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

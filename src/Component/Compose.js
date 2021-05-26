@@ -12,31 +12,46 @@ function Compose({ showCompose, setShowCompose, db, auth }) {
 
     const currentUser = auth.currentUser
 
+    // storring months names for later use
     const monthNames = ["January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"
     ];
 
+    // Getting Date
     const date = new Date()
 
+    // Converting it into month names and day numbers
     const displayDate = monthNames[date.getMonth()] + ' ' + date.getDate()
 
+    // closing compose menu
     const handleOnClick = () => {
         setShowCompose(false)
     }
 
     const sendMessage = () => {
-        db.collection("mails").add({
-            date: displayDate,
-            sendTo: to,
-            text: text,
-            title: title,
-            username: currentUser.displayName
-
-        })
-
-        console.log('send')
+        // checking if any fields are empty
+        if (to !== "" || text !== "" || title !== "") {
+            db.collection("emails").add({
+                date: displayDate,
+                sendTo: to,
+                text: text,
+                title: title,
+                username: currentUser.displayName,
+                id: Math.random()
+            })
+            
+            // resetting Fields
+            setText("")
+            setTitle("")
+            setTo("")
+            
+            // Alerting the user that the message was sent
+            alert('Email Send Successfully')
+        } else {
+            alert("Required Fields Not Filled")
+        }
     }
-
+    
     return (
         <div className={showCompose ? 'compose' : 'hidden'}>
             <header className="header">
