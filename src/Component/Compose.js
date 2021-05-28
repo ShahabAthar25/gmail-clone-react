@@ -30,7 +30,7 @@ function Compose({ showCompose, setShowCompose, db, auth }) {
 
     const sendMessage = () => {
         // checking if any fields are empty
-        if (to !== "" || text !== "" || title !== "") {
+        if (to !== "" & text !== "" & title !== "") {
             db.collection("emails").add({
                 date: displayDate,
                 sendTo: to,

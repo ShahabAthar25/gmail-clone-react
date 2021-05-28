@@ -65,8 +65,10 @@ function MailDetail({ auth, db, id }) {
                         <div className="title">
                             <h2>{mail.title}</h2>
                         </div>
-                        <MailDetailOption Icon={PrintIcon} />
-                        <MailDetailOption Icon={OpenInNewIcon} />
+                        <div className="mailDetail__icon">
+                            <MailDetailOption Icon={PrintIcon} />
+                            <MailDetailOption Icon={OpenInNewIcon} />
+                        </div>
                     </div>
                     <div className="mailDetail__header">
                         <div className="mailDetail__info">

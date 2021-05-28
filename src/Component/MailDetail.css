@@ -16,11 +16,66 @@
 
 .mailDetail__right {
     display: flex;
-    align-items: center;
 }
 
 .mailDetail__seprater {
     border-left: 1px solid #e0e0e0;
     height: 23px;
     margin: 0 5px;
+}
+
+.mailDetail__titleIcon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    padding-left: 60px;
+}
+
+.mailDetail__icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 17px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title h2 {
+    font-weight: 500;
+}
+
+.mailDetail__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.name {
+    margin-top: 10px;
+    margin-left: 10px;
+    display: flex;
+}
+
+.name h4 {
+    font-size: 17px;
+    font-weight: 700;
+}
+.name p {
+    color: #a1a1a1;
+    font-size: small;
+    margin-left: 10px;
+    margin-top: 2px;
+}
+
+.date h5 {
+    color: #a1a1a1;
+}
+
+.avatar img {
+    border-radius: 50%;
+    object-fit: contain;
+    height: 50px;
 }
