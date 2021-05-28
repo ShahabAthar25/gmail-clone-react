@@ -21,7 +21,7 @@ import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 
 import MailDetailOption from './MailDetailOption';
 
-function MailDetail({ auth, db, id }) {
+function MailDetail({ auth, db, id, setEmailDetail }) {
 
     const [mails, setMails] = useState([])
 
@@ -37,11 +37,17 @@ function MailDetail({ auth, db, id }) {
         // eslint-disable-next-line
     }, []);
 
+    const handleOnClick = () => {
+        setEmailDetail(true)
+    }
+
     return (
         <div className="mailDetail">
             <div className="mailDetail__icons">
                 <div className="mailDetail__left">
-                    <MailDetailOption Icon={ArrowBackIcon} />
+                    <button className="mailDetail__btn" onClick={handleOnClick}>
+                        <MailDetailOption Icon={ArrowBackIcon} />
+                    </button>
                     <MailDetailOption Icon={AssignmentReturnedIcon} />
                     <MailDetailOption Icon={ReportIcon} />
                     <MailDetailOption Icon={DeleteIcon} />

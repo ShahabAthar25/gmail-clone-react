@@ -20,7 +20,7 @@ function Gmail({ auth, db }) {
             <Navbar auth={auth} />
             <div className="divide">
                 <Sidebar setShowCompose={setShowCompose} />
-                {emailDetail ? <Mails db={db} auth={auth} setEmailDetail={setEmailDetail} setId={setId} /> : <MailDetail auth={auth} db={db} id={id} />}
+                {emailDetail ? <Mails db={db} auth={auth} setEmailDetail={setEmailDetail} setId={setId} /> : <MailDetail auth={auth} db={db} id={id} setEmailDetail={setEmailDetail} />}
                 <Widgets />
             </div>
             <Compose showCompose={showCompose} setShowCompose={setShowCompose} db={db} auth={auth} />

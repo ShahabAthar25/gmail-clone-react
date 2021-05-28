@@ -79,3 +79,14 @@
     object-fit: contain;
     height: 50px;
 }
+
+.mailDetail__body {
+    margin-top: 20px;
+    margin-left: 60px;
+}
+
+.mailDetail__btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
