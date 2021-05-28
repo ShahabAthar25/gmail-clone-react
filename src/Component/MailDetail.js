@@ -14,6 +14,10 @@ import LabelIcon from '@material-ui/icons/Label';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import KeyboardIcon from '@material-ui/icons/Keyboard';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import StarBorderIcon from '@material-ui/icons/StarBorder';
+import ReplyIcon from '@material-ui/icons/Reply';
+import PrintIcon from '@material-ui/icons/Print';
+import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 
 import MailDetailOption from './MailDetailOption';
 
@@ -23,7 +27,7 @@ function MailDetail({ auth, db, id }) {
 
     const currentUser = auth.currentUser
 
-    // getting data from firebase
+    // getting data from firebase where id is cureent id of email
     useEffect(() => {
         db.collection("emails").where("id", "==", id).onSnapshot((snapshot) =>
             // storring the data from firebase
@@ -32,8 +36,6 @@ function MailDetail({ auth, db, id }) {
         //Ignoring Warning with below line it is ignored with a comment
         // eslint-disable-next-line
     }, []);
-
-    console.log(mails)
 
     return (
         <div className="mailDetail">
@@ -59,7 +61,39 @@ function MailDetail({ auth, db, id }) {
             </div>
             {mails.map((mail) => (
                 <div className="mailDetaile__Detail">
-                    <h1>{mail.title}</h1>
+                    <div className="mailDetail__titleIcon">
+                        <div className="title">
+                            <h2>{mail.title}</h2>
+                        </div>
+                        <MailDetailOption Icon={PrintIcon} />
+                        <MailDetailOption Icon={OpenInNewIcon} />
+                    </div>
+                    <div className="mailDetail__header">
+                        <div className="mailDetail__info">
+                            <div className="mailDetail__right">
+                                <div className="avatar">
+                                    <img src={currentUser.photoURL} alt="" />
+                                </div>
+                                <div className="name">
+                                    <h4>{mail.username}</h4>
+                                    <p>{currentUser.email}</p>
+                                </div>
+                            </div>
+                            <div className="mailDetail__left">
+                                <div className="date">
+                                    <h5>{mail.date}</h5>
+                                </div>
+                                <MailDetailOption Icon={StarBorderIcon} />
+                                <MailDetailOption Icon={ReplyIcon} />
+                                <MailDetailOption Icon={MoreVertIcon} />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="mailDetail__body">
+                        <div className="mailDetail__text">
+                            <p>{mail.text}</p>
+                        </div>
+                    </div>
                 </div>
             ))}
         </div>
