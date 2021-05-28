@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import './MailDetail.css'
 
@@ -17,7 +17,24 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import MailDetailOption from './MailDetailOption';
 
-function MailDetail() {
+function MailDetail({ auth, db, id }) {
+
+    const [mails, setMails] = useState([])
+
+    const currentUser = auth.currentUser
+
+    // getting data from firebase
+    useEffect(() => {
+        db.collection("emails").where("id", "==", id).onSnapshot((snapshot) =>
+            // storring the data from firebase
+            setMails(snapshot.docs.map((doc) => doc.data()))
+        );
+        //Ignoring Warning with below line it is ignored with a comment
+        // eslint-disable-next-line
+    }, []);
+
+    console.log(mails)
+
     return (
         <div className="mailDetail">
             <div className="mailDetail__icons">
@@ -26,11 +43,11 @@ function MailDetail() {
                     <MailDetailOption Icon={AssignmentReturnedIcon} />
                     <MailDetailOption Icon={ReportIcon} />
                     <MailDetailOption Icon={DeleteIcon} />
-                    <div className="seprater"></div>
+                    <div className="mailDetail__seprater"></div>
                     <MailDetailOption Icon={MailIcon} />
                     <MailDetailOption Icon={WatchLaterIcon} />
                     <MailDetailOption Icon={PlaylistAddCheckIcon} />
-                    <div className="seprater"></div>
+                    <div className="mailDetail__seprater"></div>
                     <MailDetailOption Icon={ForwardIcon} />
                     <MailDetailOption Icon={LabelIcon} />
                     <MailDetailOption Icon={MoreVertIcon} />
@@ -40,9 +57,11 @@ function MailDetail() {
                     <MailDetailOption Icon={ExpandMoreIcon} small />
                 </div>
             </div>
-            <div className="body">
-                <div className="title"></div>
-            </div>
+            {mails.map((mail) => (
+                <div className="mailDetaile__Detail">
+                    <h1>{mail.title}</h1>
+                </div>
+            ))}
         </div>
     )
 }

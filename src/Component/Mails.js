@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from 'react'
+import React, { useState , useEffect } from 'react'
 
 import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -14,7 +14,7 @@ import './Mails.css'
 import MailOption from './MailOption';
 import Mail from './Mail';
 
-function Mails({ db, auth }) {
+function Mails({ db, auth, setEmailDetail, setId }) {
 
     const [mails, setMails] = useState([])
 
@@ -74,6 +74,8 @@ function Mails({ db, auth }) {
                         title={mail.title}
                         date={mail.date}
                         id={mail.id}
+                        setEmailDetail={setEmailDetail}
+                        setId={setId}
                     />
                 ))}
             </div>

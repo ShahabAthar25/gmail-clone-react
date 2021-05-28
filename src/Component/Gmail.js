@@ -1,25 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import Home from './Home'
-import EmailView from './EmailView'
+import Sidebar from './Sidebar'
+import Mails from './Mails'
+import Widgets from './Widgets'
+import Navbar from './Navbar'
+import Compose from './Compose'
+import MailDetail from './MailDetail'
 
-import {
-    BrowserRouter as Router,
-    Route,
-} from 'react-router-dom'
+import './Gmail.css'
 
 function Gmail({ auth, db }) {
 
+    const [showCompose, setShowCompose] = useState(false)
+    const [emailDetail, setEmailDetail] = useState(true)
+    const [id, setId] = useState("")
+
     return (
         <div className="gamil">
-            <Router>
-                    <Route path="/email/id/:id" exact>
-                        <EmailView auth={auth} db={db} />
-                    </Route>
-                    <Route path="/" exact>
-                        <Home auth={auth} db={db} />
-                    </Route>
-            </Router>
+            <Navbar auth={auth} />
+            <div className="divide">
+                <Sidebar setShowCompose={setShowCompose} />
+                {emailDetail ? <Mails db={db} auth={auth} setEmailDetail={setEmailDetail} setId={setId} /> : <MailDetail auth={auth} db={db} id={id} />}
+                <Widgets />
+            </div>
+            <Compose showCompose={showCompose} setShowCompose={setShowCompose} db={db} auth={auth} />
         </div>
     )
 }
