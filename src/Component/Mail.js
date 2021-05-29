@@ -19,8 +19,6 @@ function Mail({ username, text, date, title, id, setEmailDetail, setId }) {
         setId(id)
     }
 
-    console.log(id)
-
     return (
         <div className="mail" onClick={handleOnClick}>
             <div className="mail-left">

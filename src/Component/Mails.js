@@ -22,7 +22,7 @@ function Mails({ db, auth, setEmailDetail, setId }) {
 
     // getting data from firebase
     useEffect(() => {
-        db.collection("emails").where("sendTo", "==", currentUser.email).onSnapshot((snapshot) =>
+        db.collection("emails").where("sendTo", "==", currentUser.email).orderBy('timestamp', 'desc').onSnapshot((snapshot) =>
             // storring the data from firebase
             setMails(snapshot.docs.map((doc) => doc.data()))
         );

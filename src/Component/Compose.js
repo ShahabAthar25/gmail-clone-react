@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import CloseIcon from '@material-ui/icons/Close';
+import firebase from 'firebase'
 
 import './Compose.css'
 
@@ -37,7 +38,8 @@ function Compose({ showCompose, setShowCompose, db, auth }) {
                 text: text,
                 title: title,
                 username: currentUser.displayName,
-                id: Math.random()
+                id: Math.random(),
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
             })
             
             // resetting Fields
