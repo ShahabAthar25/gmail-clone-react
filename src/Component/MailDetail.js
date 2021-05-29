@@ -25,8 +25,6 @@ function MailDetail({ auth, db, id, setEmailDetail }) {
 
     const [mails, setMails] = useState([])
 
-    const currentUser = auth.currentUser
-
     // getting data from firebase where id is cureent id of email
     useEffect(() => {
         db.collection("emails").where("id", "==", id).onSnapshot((snapshot) =>
@@ -80,11 +78,11 @@ function MailDetail({ auth, db, id, setEmailDetail }) {
                         <div className="mailDetail__info">
                             <div className="mailDetail__right">
                                 <div className="avatar">
-                                    <img src={currentUser.photoURL} alt="" />
+                                    <img src={mail.photo} alt="" />
                                 </div>
                                 <div className="name">
                                     <h4>{mail.username}</h4>
-                                    <p>{currentUser.email}</p>
+                                    <p>{mail.email}</p>
                                 </div>
                             </div>
                             <div className="mailDetail__left">

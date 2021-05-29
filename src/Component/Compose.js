@@ -38,6 +38,8 @@ function Compose({ showCompose, setShowCompose, db, auth }) {
                 text: text,
                 title: title,
                 username: currentUser.displayName,
+                photo: currentUser.photoURL,
+                email: currentUser.email,
                 id: Math.random(),
                 timestamp: firebase.firestore.FieldValue.serverTimestamp()
             })

@@ -13,7 +13,6 @@ function Gmail({ auth, db }) {
 
     const [showCompose, setShowCompose] = useState(false)
     const [emailDetail, setEmailDetail] = useState(true)
-    const [starred, setStarred] = useState(true)
     const [id, setId] = useState("")
 
     return (
